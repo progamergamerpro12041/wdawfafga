@@ -1,18 +1,5 @@
-game.StarterGui:SetCore("SendNotification", {
-	Title = "Commands :",
-	Text = '/e w -- Enable /e q -- Disable',
-	Duration = 2,
-    })
-
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == "/e w" then
-
-game.StarterGui:SetCore("SendNotification", {
-	Title = "Silent Aim Enabled!",
-	Text = '',
-	Duration = 2,
-    })
-
+    if msg == "/e w" then 
 -- // Dependencies
 local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/progamergamerpro120414151616124/peopletalk2467/main/whysomeanbro"))()
 Aiming.TeamCheck(false)
@@ -31,7 +18,6 @@ local DaHoodSettings = {
     Prediction = 0.165,
 
 }
-
 getgenv().DaHoodSettings = DaHoodSettings
 -- // Overwrite to account downed
 function Aiming.Check()
@@ -83,14 +69,6 @@ RunService:BindToRenderStep("AimLock", 0, function()
   
   game.Players.LocalPlayer.Chatted:Connect(function(msg)
   if msg == "/e q" then
-  game.StarterGui:SetCore("SendNotification", {
-	Title = "Silent Aim Disabled!",
-	Text = '',
-	Duration = 2,
-    })
-
   DaHoodSettings.SilentAim = false
   DaHoodSettings.AimLock = false
-        end
-    end)
-end)
+  end
